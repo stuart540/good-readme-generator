@@ -6,6 +6,16 @@ const generateMarkdown = require("./utils/generateMarkdown");
 // array of questions for user
 const questions = [
 
+    // * The title of my project 
+    // * Description 
+    // * Table of Contents 
+    // * Installation 
+    // * Usage 
+    // * License 
+    // * Contributing 
+    // * Tests 
+    // * Questions
+
 ];
 
 // function to write README file
@@ -19,3 +29,7 @@ function init() {
 
 // function call to initialize program
 init();
+
+const util = require('util');
+
+const writeFileAsync = util.promisify(fs.writeFile);
