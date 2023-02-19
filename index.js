@@ -68,23 +68,6 @@ const promptUser = () => {
       message: 'Please enter your preferred e-mail address.',
     },
   ]);
-
-  // array of questions for user
-  // const questions = [
-
-  //     // * The title of my project 
-  //     // * Description 
-  //     // * Table of Contents 
-  //     // * Installation 
-  //     // * Usage 
-  //     // * License 
-  //     // * Contributing 
-  //     // * Tests 
-  //     // * Questions
-
-  // ];
-
-  
 }
 
 // function to write README file
@@ -92,7 +75,8 @@ const init = async () => {
   console.log('Welcome to the markdown generator');
   try {
     const data = await promptUser();
-
+    
+    console.log(`${data.license}`)
     const markdown = generateMarkdown(data);
 
     await writeToFile(`${data.title} README.md`, markdown);
