@@ -14,11 +14,11 @@
 // function to generate markdown for README
 function generateMarkdown(data) {
 
-  `#  ${answers.title}  ${answers.badge}
+  return `#  ${data.title}  ${data.badge}
 
   ## Description
   
-  ${answers.description}
+  ${data.description}
   
 
   ## Table of Contents
@@ -32,41 +32,37 @@ function generateMarkdown(data) {
 
   ## Installation
   
-  ${answers.installation}
+  ${data.installation}
   
   
   ## Usage 
   
-  ${answers.usage}
+  ${data.usage}
   
 
   ## License
   
-  ${answers.license}
+  ${data.license}
   
   
   ## Contributing
   
-  ${answers.contributing}
+  ${data.contributing}
   
   
   ## Tests
   
-  ${answers.tests}
+  ${data.tests}
   
 
   ## Questions
 
-  Please have a look at my [GitHub Profile](https://github.com/${answers.github}/)
+  Please have a look at my [GitHub Profile](https://github.com/${data.github}/)
 
-  If you have any questions please feel free to drop me an [e-mail](https://github.com/${answers.email}/)
+  If you have any questions please feel free to drop me an [e-mail](https://github.com/${data.email}/)
 
 
-  ---`
-
-  return `# ${data.title}
-
-`;
+  ---`;
 }
 
 module.exports = generateMarkdown;

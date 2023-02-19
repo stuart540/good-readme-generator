@@ -2,12 +2,16 @@ const fs = require("fs");
 const path = require('path');
 const inquirer = require("inquirer");
 const generateMarkdown = require("./utils/generateMarkdown");
+const util = require('util');
+
+const writeToFile = util.promisify(fs.writeFile);
 
 // Using inquirer.prompt, create an array aof questions to ask the user
 // for multiple choice questions like License use a list 
 
-const init = () => {
-  inquirer.prompt([
+// function to initialize program
+const promptUser = () => {
+  return inquirer.prompt([
     {
       type: 'input',
       name: 'title',
@@ -26,7 +30,7 @@ const init = () => {
     {
       type: 'input',
       name: 'usage',
-      message: 'Please provide instructions and examples for use.',
+      message: 'Please provide instructions and examples for the use of the project.',
     },
     {
       type: 'list',
@@ -65,29 +69,40 @@ const init = () => {
     },
   ]);
 
-// array of questions for user
-const questions = [
+  // array of questions for user
+  // const questions = [
 
-    // * The title of my project 
-    // * Description 
-    // * Table of Contents 
-    // * Installation 
-    // * Usage 
-    // * License 
-    // * Contributing 
-    // * Tests 
-    // * Questions
+  //     // * The title of my project 
+  //     // * Description 
+  //     // * Table of Contents 
+  //     // * Installation 
+  //     // * Usage 
+  //     // * License 
+  //     // * Contributing 
+  //     // * Tests 
+  //     // * Questions
 
-];
+  // ];
+
+  
+}
 
 // function to write README file
-function writeToFile(fileName, data) {
-}
+const init = async () => {
+  console.log('hi');
+  try {
+    const data = await promptUser();
 
-// function to initialize program
-// function init() {
+    const markdown = generateMarkdown(data);
 
-}
+    await writeToFile('README.md', markdown);
+
+    console.log('Successfully wrote to README.md');
+  } catch (err) {
+    console.log(err);
+  }
+};
 
 // function call to initialize program
-init();
+init()
+
