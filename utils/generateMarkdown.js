@@ -1,6 +1,5 @@
-//create a README.md template with spaces fro the user input to be added.
-// The contents section needs to be selectable using * [Installation](#installation)
 
+//function for user selected license to generate badge
 function getBadge(license) {
   switch (license) {
     case "Apache 2.0 License":
@@ -35,7 +34,7 @@ function getBadge(license) {
 // function to generate markdown for README
 function generateMarkdown(data) {
 
-  return `#  ${data.title}` + getBadge(`${data.license}`) + `
+  return `#  ${data.title} ` + getBadge(`${data.license}`) + `
 
   ## Description
   

@@ -11,6 +11,7 @@ const writeToFile = util.promisify(fs.writeFile);
 
 // function to initialize program
 const promptUser = () => {
+  // inquirer input and list prompts
   return inquirer.prompt([
     {
       type: 'input',
@@ -79,7 +80,7 @@ const init = async () => {
     console.log(`${data.license}`)
     const markdown = generateMarkdown(data);
 
-    await writeToFile(`${data.title} README.md`, markdown);
+    await writeToFile(`${data.title}-README.md`, markdown);
 
     console.log('Successfully wrote to README.md');
   } catch (err) {
@@ -87,6 +88,6 @@ const init = async () => {
   }
 };
 
-// function call to initialize program
+// function to initialize program
 init()
 
