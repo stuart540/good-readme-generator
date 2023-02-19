@@ -42,7 +42,7 @@ function generateMarkdown(data) {
 
   ## License
   
-  ${data.license}
+  This project is licensed under the ${data.license}
   
   
   ## Contributing
@@ -59,7 +59,7 @@ function generateMarkdown(data) {
 
   Please have a look at my [GitHub Profile](https://github.com/${data.github}/)
 
-  If you have any questions please feel free to drop me an [e-mail](https://github.com/${data.email}/)
+  If you have any questions please feel free to drop me an e-mail <${data.email}>
 
 
   ---`;
