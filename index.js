@@ -89,7 +89,7 @@ const promptUser = () => {
 
 // function to write README file
 const init = async () => {
-  console.log('hi');
+  console.log('Welcome to the markdown generator');
   try {
     const data = await promptUser();
 
