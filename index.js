@@ -6,37 +6,62 @@ const generateMarkdown = require("./utils/generateMarkdown");
 // Using inquirer.prompt, create an array aof questions to ask the user
 // for multiple choice questions like License use a list 
 
-const init = () =>
+const init = () => {
   inquirer.prompt([
     {
       type: 'input',
-      name: 'name',
-      message: 'What is your name?',
+      name: 'title',
+      message: 'What is the title of your project',
     },
     {
       type: 'input',
-      name: 'location',
-      message: 'Where are you from?',
+      name: 'description',
+      message: 'Please enter a description of your project',
     },
     {
       type: 'input',
-      name: 'hobby',
-      message: 'What is your favorite hobby?',
+      name: 'installation',
+      message: 'Please enter the installation instructions',
     },
     {
       type: 'input',
-      name: 'food',
-      message: 'What is your favorite food?',
+      name: 'usage',
+      message: 'Please provide instructions and examples for use.',
+    },
+    {
+      type: 'list',
+      name: 'license',
+      message: 'Please choose a license for your project',
+      choices: [
+        "Apache 2.0 License",
+        "Boost Software License 1.0",
+        "BSD 3-Clause License",
+        "BSD 2-Clause License",
+        "Eclipse Public License 1.0",
+        "The MIT License",
+        "Mozilla Public License 2.0",
+        "GNU General Public License v3"
+      ]
+    },
+    {
+      type: 'input',
+      name: 'contributing',
+      message: 'Please enter guidelines for how others can contribute to the project.',
+    },
+    {
+      type: 'input',
+      name: 'tests',
+      message: 'Please provide your tests and examples on how to run them.',
     },
     {
       type: 'input',
       name: 'github',
-      message: 'Enter your GitHub Username',
+      message: 'Please enter your GitHub Username',
     },
     {
       type: 'input',
-      name: 'linkedin',
-      message: 'Enter your LinkedIn URL.',
+      name: 'email',
+      message: 'Please enter your preferred e-mail address.',
     },
   ]);
 

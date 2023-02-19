@@ -42,7 +42,7 @@ function generateMarkdown(data) {
 
   ## License
   
-  ${answers.usage}
+  ${answers.license}
   
   
   ## Contributing
@@ -54,9 +54,12 @@ function generateMarkdown(data) {
   
   ${answers.tests}
   
+
   ## Questions
-  
-  ${answers.questions}
+
+  Please have a look at my [GitHub Profile](https://github.com/${answers.github}/)
+
+  If you have any questions please feel free to drop me an [e-mail](https://github.com/${answers.email}/)
 
 
   ---`
