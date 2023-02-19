@@ -1,5 +1,4 @@
 const fs = require("fs");
-const path = require('path');
 const inquirer = require("inquirer");
 const generateMarkdown = require("./utils/generateMarkdown");
 const util = require('util');
@@ -77,7 +76,6 @@ const init = async () => {
   try {
     const data = await promptUser();
     
-    console.log(`${data.license}`)
     const markdown = generateMarkdown(data);
 
     await writeToFile(`${data.title}-README.md`, markdown);
